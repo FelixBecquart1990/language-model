@@ -25,16 +25,20 @@
       </div>
       <TextBox />
     </v-content>
+    <snackbar />
   </v-app>
 </template>
 
 <script>
 import TextBox from "./components/TextBox";
+import Snackbar from "./components/Snackbar";
 
 export default {
   name: "App",
 
   components: {
+    Snackbar,
+
     TextBox
   },
 
@@ -45,27 +49,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
-@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
-@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
-
-body {
-  min-height: 450px;
-  height: 100vh;
-  margin: 0;
-  background: radial-gradient(
-    circle,
-    darken(dodgerblue, 10%),
-    #1f4f96,
-    #1b2949,
-    #000
-  );
-}
-
 .stage {
   margin-top: 60px;
   margin-bottom: 150px;
-  transform: scale(0.5);
+  // transform: scale(0.5);
   perspective: 9999px;
   transform-style: preserve-3d;
 }
@@ -81,8 +68,8 @@ body {
 }
 
 .layer:after {
-  font: 150px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto",
-    "Trebuchet MS", Helvetica, sans-serif;
+  font: 70px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS",
+    Helvetica, sans-serif;
   content: "Magic Text";
   white-space: pre;
   text-align: center;
@@ -108,17 +95,17 @@ $NUM_LAYERS: 20;
 }
 
 .layer:nth-child(n + #{round($NUM_LAYERS/2 + 1)}):after {
-  -webkit-text-stroke: 15px dodgerblue;
+  -webkit-text-stroke: 10px dodgerblue;
   text-shadow: 6px 0 6px darken(dodgerblue, 35%),
     5px 5px 5px darken(dodgerblue, 40%), 0 6px 6px darken(dodgerblue, 35%);
 }
 
 .layer:nth-child(n + #{round($NUM_LAYERS/2 + 2)}):after {
-  -webkit-text-stroke: 15px darken(dodgerblue, 10%);
+  -webkit-text-stroke: 10px darken(dodgerblue, 10%);
 }
 
 .layer:last-child:after {
-  -webkit-text-stroke: 17px hsla(0, 0%, 0%, 0.1);
+  -webkit-text-stroke: 10px hsla(0, 0%, 0%, 0.1);
 }
 
 .layer:first-child:after {
