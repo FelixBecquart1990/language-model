@@ -79,7 +79,7 @@ export default {
       this.generatedText = "";
       this.loading = true;
       let self = this;
-      fetch("http://127.0.0.1:5000/", {
+      fetch("http://10.0.1.248:5000/", {
         method: "post",
         headers: {
           "Content-Type": "application/json"
@@ -88,6 +88,7 @@ export default {
       })
         .then(res => res.json())
         .then(function(data) {
+          console.log(data);
           self.generatedText = data.text;
           self.textAnimation();
           self.loading = false;
