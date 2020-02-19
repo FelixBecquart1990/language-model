@@ -1,6 +1,11 @@
 <template>
   <v-app>
     <v-content>
+      <v-app-bar color="transparent" dark flat dense>
+        <div class="logo"></div>
+        <v-spacer></v-spacer>
+        <v-toolbar-title class="mt-3">Mariana</v-toolbar-title>
+      </v-app-bar>
       <div class="stage">
         <div class="layer"></div>
         <div class="layer"></div>
@@ -170,5 +175,12 @@ h1 {
       transparent 32px
     ),
     linear-gradient(90deg, hsl(230, 78%, 25%), hsl(230, 78%, 25%));
+}
+
+.logo {
+  background-image: url("./assets/log.svg");
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
 }
 </style>
